@@ -1,0 +1,36 @@
+<div class="container">
+    <div class="row">
+        <div class="panel panel-default widget">
+            <div class="panel-heading">
+                <h3 class="panel-title">Items
+                </h3>
+            </div>
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="input-group c-search">
+                        <input type="text" class="form-control" ng-model="search" class="search-query" placeholder="Search">
+                            <span class="input-group-btn">
+                                <button class="btn btn-default" type="button"><span class="glyphicon glyphicon-search text-muted"></span></button>
+                            </span>
+                    </div>
+                </div>
+            </div>
+            <div class="panel-body">
+                <ul class="list-group" ng-repeat="i in items | filter:search | orderBy:'Name'">
+                    <li class="list-group-item">
+                        <div class="row">
+                            <div class="col-xs-10 col-md-11">
+                                <div>
+                                    {{i.Name}}
+                                    <span class="pull-right">
+                                        <a ng-href="#/edit/{{i.ID}}" data-toggle="tooltip" data-placement="top" title="Edit"><span style="font-size: 20px" class="glyphicon glyphicon-edit"></span></a>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>

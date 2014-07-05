@@ -1,0 +1,15 @@
+<div class="container panel-body">
+    <form novalidate name="editForm" role="form">
+        <div class="row">
+            <div class="form-group" ng-class="{'has-error': editForm.utName.$invalid && !editForm.utName.$pristine}">
+                <label for="utName">Name</label>
+                <input type="text" class="form-control" id="utName" name="utName" ng-model="item.Name" ng-required="true"/>
+            </div>
+        </div>
+        <div class="row">
+            <a href="#/list" class="btn btn-default" translate>Cancel</a>
+            <button ng-click="save()" ng-disabled="isClean() || editForm.$invalid"
+                    class="btn btn-primary" translate>Save</button>
+        </div>
+    </form>
+</div>
